@@ -83,6 +83,13 @@ const configOptions = new Map([
       default: false,
       desc: 'Reduce live stream delay (skip to live edge)'
     }
+  ],
+  [
+    'hideMerchQR',
+    {
+      default: true,
+      desc: 'Hide merch/product QR codes during videos'
+    }
   ]
 ]);
 
