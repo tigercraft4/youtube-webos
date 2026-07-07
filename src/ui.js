@@ -122,32 +122,54 @@ function createOptionsPanel() {
   elmHeading.textContent = 'webOS YouTube Extended';
   elmContainer.appendChild(elmHeading);
 
-  elmContainer.appendChild(createConfigCheckbox('enableAdBlock'));
-  elmContainer.appendChild(createConfigCheckbox('upgradeThumbnails'));
-  elmContainer.appendChild(createConfigCheckbox('hideLogo'));
-  elmContainer.appendChild(createConfigCheckbox('showWatch'));
-  elmContainer.appendChild(createConfigCheckbox('removeShorts'));
-  elmContainer.appendChild(createConfigCheckbox('forceHighResVideo'));
-  elmContainer.appendChild(createConfigCheckbox('removeEndscreen'));
-  elmContainer.appendChild(createConfigCheckbox('autoAccountSelect'));
-  elmContainer.appendChild(createConfigCheckbox('enableLiveCatchup'));
-  elmContainer.appendChild(createConfigCheckbox('hideMerchQR'));
-  elmContainer.appendChild(createConfigCheckbox('hideSignInBanner'));
-  elmContainer.appendChild(createConfigCheckbox('hideMostRelevantRow'));
-  elmContainer.appendChild(createConfigCheckbox('spoofTVDimensions'));
-  elmContainer.appendChild(createConfigCheckbox('enableSponsorBlock'));
+  // Two-column grid for main options
+  const elmGrid = document.createElement('div');
+  elmGrid.classList.add('ytaf-options-grid');
 
-  const elmBlock = document.createElement('blockquote');
+  const mainOptions = [
+    'enableAdBlock',
+    'upgradeThumbnails',
+    'hideLogo',
+    'showWatch',
+    'removeShorts',
+    'forceHighResVideo',
+    'removeEndscreen',
+    'autoAccountSelect',
+    'enableLiveCatchup',
+    'hideMerchQR',
+    'hideSignInBanner',
+    'hideMostRelevantRow',
+    'spoofTVDimensions',
+    'enableSponsorBlock'
+  ];
+  mainOptions.forEach((key) => {
+    elmGrid.appendChild(createConfigCheckbox(key));
+  });
 
-  elmBlock.appendChild(createConfigCheckbox('enableSponsorBlockSponsor'));
-  elmBlock.appendChild(createConfigCheckbox('enableSponsorBlockIntro'));
-  elmBlock.appendChild(createConfigCheckbox('enableSponsorBlockOutro'));
-  elmBlock.appendChild(createConfigCheckbox('enableSponsorBlockInteraction'));
-  elmBlock.appendChild(createConfigCheckbox('enableSponsorBlockSelfPromo'));
-  elmBlock.appendChild(createConfigCheckbox('enableSponsorBlockMusicOfftopic'));
-  elmBlock.appendChild(createConfigCheckbox('enableSponsorBlockPreview'));
+  // SponsorBlock sub-section inside the grid
+  const elmSBSection = document.createElement('div');
+  elmSBSection.classList.add('ytaf-sponsorblock-section');
 
-  elmContainer.appendChild(elmBlock);
+  const elmSBTitle = document.createElement('div');
+  elmSBTitle.classList.add('ytaf-sponsorblock-title');
+  elmSBTitle.textContent = 'SponsorBlock segments:';
+  elmSBSection.appendChild(elmSBTitle);
+
+  const sbOptions = [
+    'enableSponsorBlockSponsor',
+    'enableSponsorBlockIntro',
+    'enableSponsorBlockOutro',
+    'enableSponsorBlockInteraction',
+    'enableSponsorBlockSelfPromo',
+    'enableSponsorBlockMusicOfftopic',
+    'enableSponsorBlockPreview'
+  ];
+  sbOptions.forEach((key) => {
+    elmSBSection.appendChild(createConfigCheckbox(key));
+  });
+  elmGrid.appendChild(elmSBSection);
+
+  elmContainer.appendChild(elmGrid);
 
   const elmSponsorLink = document.createElement('small');
   elmSponsorLink.className = 'ytaf-ui-sponsor';
