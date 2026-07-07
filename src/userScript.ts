@@ -31,3 +31,6 @@ import './block-webos-cast';
 import './auto-account-select';
 import './live-catchup';
 import './hide-merch-qr';
+import './hide-signin-banner';
+import './hide-most-relevant';
+import './spoof-dimensions';

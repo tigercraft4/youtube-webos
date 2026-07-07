@@ -90,6 +90,27 @@ const configOptions = new Map([
       default: true,
       desc: 'Hide merch/product QR codes during videos'
     }
+  ],
+  [
+    'hideSignInBanner',
+    {
+      default: true,
+      desc: 'Hide sign-in banners during video playback'
+    }
+  ],
+  [
+    'hideMostRelevantRow',
+    {
+      default: false,
+      desc: 'Hide "Most Relevant" row on subscriptions page'
+    }
+  ],
+  [
+    'spoofTVDimensions',
+    {
+      default: false,
+      desc: 'Spoof screen size to 4K (better video quality)'
+    }
   ]
 ]);
 

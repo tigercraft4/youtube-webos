@@ -132,6 +132,9 @@ function createOptionsPanel() {
   elmContainer.appendChild(createConfigCheckbox('autoAccountSelect'));
   elmContainer.appendChild(createConfigCheckbox('enableLiveCatchup'));
   elmContainer.appendChild(createConfigCheckbox('hideMerchQR'));
+  elmContainer.appendChild(createConfigCheckbox('hideSignInBanner'));
+  elmContainer.appendChild(createConfigCheckbox('hideMostRelevantRow'));
+  elmContainer.appendChild(createConfigCheckbox('spoofTVDimensions'));
   elmContainer.appendChild(createConfigCheckbox('enableSponsorBlock'));
 
   const elmBlock = document.createElement('blockquote');
